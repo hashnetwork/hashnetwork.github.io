@@ -1,0 +1,28 @@
+
+  {% if page.title != 404 %}
+  <footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+  </footer>
+
+  <button class="to-top" onclick="scrollToTop()">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    window.onscroll = function () {
+      const toTopButton = document.querySelector('.to-top');
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        toTopButton.style.display = "flex";
+      } else {
+        toTopButton.style.display = "none";
+      }
+    };
+  </script>
+  {% endif %}

@@ -1,0 +1,55 @@
+---
+layout: base
+---
+{% if page.dev %}
+<pre style="color: red;">
+page.dev == {{ page.dev }}
+page.layout == from {{ page.layout }}
+page.title == from {{ page.title }}
+site.paginate == {{ site.paginate }}
+Total number of posts: {{ site.posts | size }}
+</pre>
+{%- endif -%}
+
+{% if page.title == "index" %}
+  <article>
+    <h2>page.title is index</h2>
+    {% for post in site.posts limit:4 %}
+    <div>
+      <p><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time></p>
+      <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
+    </div>
+    {% endfor %}
+  </article>
+
+{% else %}
+  <h1>ELSE</h1>
+  <article>
+    <h2>page.title is not index {{page.title}}</h2>
+    {% for post in paginator.posts %}
+      <div>
+        <p><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time></p>
+        <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
+      </div>
+    {% endfor %}
+  
+    <hr />
+  
+    <!-- Pagination Links -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">Previous</a>
+      {% else %}
+        <span>Previous</span>
+      {% endif %}
+      
+      <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}">Next</a>
+      {% else %}
+        <span>Next</span>
+      {% endif %}
+    </div>
+  </article>
+{%- endif -%}

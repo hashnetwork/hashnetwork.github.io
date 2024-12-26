@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+<head>
+    <title>MU unscramble | filters</title>
+    {%- include head.html -%}
+    {%- include custom-head.html -%}
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body>
+    {%- include header.html -%}
+    <main class="container">
+        <section>
+            <h2>Monster List</h2>
+            <p>Search for a name in the input field:</p>
+            <input oninput="w3.filterHTML('#id01', 'li', this.value)" placeholder="Search..">
+            <ul id="id01">
+                <li>Aegis</li>
+                <li>Agon</li>
+                <li>Assassin</li>
+                <li>Balrog</li>
+                <li>Beetle Monster</li>
+                <li>Blood Soldier</li>
+                <li>Bloody Death Rider</li>
+                <li>Bloody Golem</li>
+                <li>Bloody Orc</li>
+                <li>Bloody Witch Queen</li>
+                <li>Bloody Wolf</li>
+                <li>Bull Fighter</li>
+                <li>Captain Grizzly</li>
+                <li>Cyclops</li>
+                <li>Cursed Lich</li>
+                <li>Cursed Wizard</li>
+                <li>Dark Knight</li>
+                <li>Death Angel</li>
+                <li>Death Beam Knight</li>
+                <li>Death Centurion</li>
+                <li>Death Cow</li>
+                <li>Death Gorgon</li>
+                <li>Death King</li>
+                <li>Death Rider</li>
+                <li>Death Tree</li>
+                <li>Devil</li>
+                <li>Elite Bull Fighter</li>
+                <li>Elite Goblin</li>
+                <li>Elite Skeleton Warrior</li>
+                <li>Elite Yeti</li>
+                <li>Forest Monster</li>
+                <li>Forest Orc</li>
+                <li>Giant</li>
+                <li>Gorgon</li>
+                <li>Grizzly</li>
+                <li>Great Bahamut</li>
+                <li>Hideous Rabbit</li>
+                <li>Hell Hound</li>
+                <li>Hell Spider</li>
+                <li>Hommerd</li>
+                <li>Hunter</li>
+                <li>Hydra</li>
+                <li>Ice Monster</li>
+                <li>Ice Queen</li>
+                <li>Iron Wheel</li>
+                <li>Lich</li>
+                <li>Lizard King</li>
+                <li>Lord Centurion</li>
+                <li>Mutant</li>
+                <li>Necron</li>
+                <li>Poison Bull Fighter</li>
+                <li>Poison Shadow</li>
+                <li>Pollution Butterfly</li>
+                <li>Skeleton Archer</li>
+                <li>Skeleton Warrior</li>
+                <li>Shadow</li>
+                <li>Schriker</li>
+                <li>Stone Golem</li>
+                <li>Strange Rabbit</li>
+                <li>Skeleton Warrior</li>
+                <li>Thunder Lich</li>
+                <li>Totem Golem</li>
+                <li>Valkyrie</li>
+                <li>Vepar</li>
+                <li>Witch Queen</li>
+                <li>Werewolf</li>
+                <li>Worm</li>
+                <li>Yeti</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+    <button class="to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.onscroll = function () {
+            const toTopButton = document.querySelector('.to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                toTopButton.style.display = "flex";
+            } else {
+                toTopButton.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>

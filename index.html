@@ -57,7 +57,11 @@
       <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
         This site is open source. <a href="https://github.com/hashnetwork/hashnetwork.github.io/edit/main/README.md">Improve this page</a>.
       </div>
-      
+      <p>
+        <strong>Last updated on:</strong> 
+        {% assign last_updated = site.time | date: "%Y-%m-%d %H:%M" %}
+        {{ last_updated }}
+      </p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>

@@ -1,11 +1,27 @@
   {% assign muguides = "/guides/mu/" %}
-  <header>
+  <header class="container recenter">
     <div class="icon-group">
-      <a href="/" class="icon"><i class="fas fa-house"></i></a>
-      <!-- <a href="/blog" class="icon"><i class="fa-solid fa-list-ul"></i></a> -->
-      <a href="/music" class="icon"><i class="fa-solid fa-music"></i></a>
-      <!-- <a href="#" class="icon"><i class="fa-solid fa-tags"></i></a> -->
-      <!-- <a href="#" class="icon"><i class="fa-solid fa-rss"></i></a> -->
-      <!-- <a href="/guides/mu/unscramble" class="icon"><i class="fa-solid fa-search"></i></a> -->
+      <div class="icon-box" data-tooltip="Home" data-placement="bottom">
+        <a href="/" class="icon"><i class="fas fa-house"></i></a>
+      </div>
+      <div class="icon-box" data-tooltip="Music" data-placement="bottom">
+        <a href="/music" class="icon"><i class="fa-solid fa-music"></i></a>
+      </div>
+      <div class="icon-box" data-tooltip="tags" data-placement="bottom">
+        <a href="/pages/tags" class="icon"><i class="fa-solid fa-tags"></i></a>
+      </div>
+      <div class="icon-box" data-tooltip="Utilities" data-placement="bottom">
+        <a href="/util" class="icon"><i class="fas fa-tools"></i></a>
+      </div>
+      <div class="icon-box" data-tooltip="Rss" data-placement="bottom">
+        <a href="#" class="icon"><i class="fa-solid fa-rss"></i></a>
+      </div>
+      <!-- Theme Toggle Icon -->
+      <div class="icon-box" data-tooltip="Toggle Theme" data-placement="bottom">
+        <a href="#" class="icon" id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" id="moon-icon" style="display: none;"></i>
+          <i class="fas fa-sun" id="sun-icon"></i>
+        </a>
+      </div>
     </div>
   </header>

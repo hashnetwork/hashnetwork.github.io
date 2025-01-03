@@ -6,13 +6,16 @@
   
 </head>
 <body>
+  <!-- Wrapper to handle the layout with flexbox -->
+  <div class="wrapper">
   {%- include header.html -%}
-  <main class="container">
+  <main class="container flex">
     <article>
       {{content}}
     </article>
   </main>
   {%- include footer.html -%}
-  {%- include js.html -%}
+  </div>
+  {%- include base-js.html -%}
 </body>
 </html>

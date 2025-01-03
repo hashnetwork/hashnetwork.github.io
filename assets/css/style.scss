@@ -1,119 +1,71 @@
 ---
 ---
-.gray {
-  color: gray;
-  font-size: 64px;
+
+.wrapper{display: flex; flex-direction: column; height: 100vh; margin-top: 20px;}
+.flex {margin-top: 20px;flex: 1;}
+.recenter {text-align: center;}
+
+/* Styling the icon box */
+.icon-box {
+  display: inline-block;
+  margin: 0 16px;
 }
 
-header {
-  height: 48px;
-  background-color: transparent;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Smooth transition for the theme */
+html[data-theme="dark"] .icon-box {
+  background-color: #10161f;
 }
 
-.icon-group {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+html[data-theme="light"] .icon-box {
+  background-color: #fff;
 }
 
-.icon {
-  color: black;
-  padding: 10px;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s ease;
+/* Icon color changes for dark mode */
+html[data-theme="dark"] .icon i {
+  color: #f0f0f0; /* Light color for icons in dark mode */
 }
 
-.icon:hover {
-  color: #007bff;
-  border-bottom: 2px solid gray;
+html[data-theme="light"] .icon i {
+  color: #333; /* Dark color for icons in light mode */
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
+/* Hover effect on icon box */
+.icon-box:hover {
+  background-color: #007bff;
+  color: #fff;
+  // margin-top: 20px;
 }
-
-footer {
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #333333;
-  border-top: 2px solid gray;
-  margin-top: 20px;
-}
-
-footer p {
-  margin: 0;
-}
-
+/* The button itself */
 .to-top {
+  visibility: hidden;
   position: fixed;
   right: 20px;
   bottom: 60px;
   background-color: #007bff;
   color: white;
   border: none;
-  width: 50px;
-  /* Set width */
-  height: 50px;
-  /* Set height */
+  width: 60px;  /* Set the width */
+  height: 60px; /* Set the height */
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: none;
-  font-size: 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display: flex;                    /* Use flexbox to center the content */
+  justify-content: center;          /* Center horizontally */
+  align-items: center;              /* Center vertically */
+  font-size: 28px;                  /* Set the font size for the icon */
+  border-radius: 50%;               /* Makes the button round */
+  transition: all 0.3s ease;        /* Smooth transition for hover effect */
+  z-index: 9999;                    /* Ensure the button stays on top */
 }
 
+/* When hovering over the button */
 .to-top:hover {
-  background-color: #0056b3;
+  background-color: #0056b3;  /* Change button color on hover */
 }
 
+/* The icon itself */
 .to-top i {
-  margin: 0;
-}
-
-.post-list {
-  margin-top: 40px;
-}
-
-.post {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.post h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.post-meta {
-  font-size: 0.875rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.post-excerpt {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.pagination {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.pagination .button {
-  padding: 8px 16px;
-  margin: 0 5px;
+  margin: 0;                /* No margin around the icon */
+  font-size: 28px;          /* Icon size adjusted for the button */
+  line-height: 0;           /* Prevent any space that might affect the alignment */
+  display: block;           /* Make sure the icon is a block level element */
 }

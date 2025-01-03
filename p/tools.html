@@ -1,0 +1,37 @@
+---
+permalink: /dl/
+layout: base
+title: Tools
+imagelist: 1
+---
+<h1>Utilities</h1>
+{% if page.imagelist %}
+<pre>
+
+  page.imagelist == {% if page.imagelist == nil %}nil/blank{% else %}TRUE{% endif %}
+
+</pre>
+<table class="striped">
+  <thead>
+    <tr>
+      <th scope="col">basename</th>
+      <th scope="col">extname</th>
+      <th scope="col">name</th>
+      <th scope="col" td style="display: none;">path</th>
+      <th scope="col" td style="display: none;">modified_time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign image_files = site.static_files | where: "image", true %}
+    {% for myimage in image_files %}
+    <tr>
+      <th scope="row">{{ myimage.basename }}</td>
+      <td>{{ myimage.extname }}</td>
+      <td>{{ myimage.name }}</td>
+      <td style="display: none;">{{ myimage.path }}</td>
+      <td style="display: none;">{{ myimage.modified_time }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}

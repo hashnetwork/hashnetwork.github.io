@@ -1,0 +1,80 @@
+<!-- Back to Top Button -->
+<button id="back-to-top" class="to-top" onclick="scrollToTop()" aria-label="Back to Top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+<script>
+// Attach a function to the window's onscroll event to check when the user scrolls the page
+window.onscroll = function() { 
+  showBackToTopButton();  // Call the function to show or hide the "Back to Top" button
+};
+
+// Function to show or hide the "Back to Top" button based on the scroll position
+function showBackToTopButton() { 
+  // Get the "Back to Top" button element by its ID
+  const backToTopButton = document.getElementById("back-to-top");
+  
+  // Check if the user has scrolled more than 100px, if true, show the button, otherwise hide it
+  backToTopButton.style.visibility = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
+    ? "visible"  // If scrolled more than 100px, make the button visible
+    : "hidden";  // If not, keep the button hidden
+}
+
+// Function to scroll the page back to the top when the button is clicked
+function scrollToTop() { 
+  // Scroll the window to the top with a smooth scroll behavior
+  window.scrollTo({ 
+    top: 0,           // Set the scroll position to the top of the page
+    behavior: 'smooth' // Enable smooth scrolling when moving to the top
+  });
+}
+
+/* Pico Theme Switcher and JavaScript */
+
+// Initializing theme switcher
+const themeToggleButton = document.getElementById("theme-toggle");
+const moonIcon = document.getElementById("moon-icon");
+const sunIcon = document.getElementById("sun-icon");
+
+// Function to apply the chosen theme
+function applyTheme(theme) {
+    // Set the theme attribute on the HTML element
+    document.documentElement.setAttribute("data-theme", theme);
+
+    // Update the icons based on the current theme
+    if (theme === "dark") {
+    moonIcon.style.display = "none";
+    sunIcon.style.display = "inline-block";
+    } else {
+    moonIcon.style.display = "inline-block";
+    sunIcon.style.display = "none";
+    }
+
+    // Store the theme in localStorage
+    window.localStorage.setItem("theme", theme);
+}
+
+// Get the theme from localStorage, or default to the system preference
+function loadTheme() {
+    const storedTheme = window.localStorage.getItem("theme");
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    // Default to system preference if no theme is stored
+    if (storedTheme) {
+    applyTheme(storedTheme);
+    } else {
+    applyTheme(prefersDarkScheme ? "dark" : "light");
+    }
+}
+
+// Initialize theme on page load
+loadTheme();
+
+// Toggle theme when the theme button is clicked
+themeToggleButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    // Get the current theme and toggle it
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(newTheme);
+});
+</script>

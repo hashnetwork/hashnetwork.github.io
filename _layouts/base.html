@@ -1,22 +1,18 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<html data-theme="light" lang="{{ page.lang | default: site.lang | default: " en" }}">
 <head>
   {%- include head.html -%}
   {%- include custom-head.html -%}
+  
 </head>
 <body>
   {%- include header.html -%}
-
   <main class="container">
-    <section>
+    <article>
       {{content}}
-    </section>
-    <section class="content">
-      <p>firefox th-j=AQjt)Hn%xc}!3</p>
-      <p>https://www.mp3tag.de/en/index.html</p>
-
-    </section>
+    </article>
   </main>
   {%- include footer.html -%}
+  {%- include js.html -%}
 </body>
 </html>

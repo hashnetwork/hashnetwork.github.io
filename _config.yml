@@ -34,16 +34,10 @@ paginate: 5 # Number of posts per page
 # paginate_path: "/page:num/"
 paginate_path: "/blog/page:num/"
 
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
-
-# Include the subfolder directory
-collections:
-  music:
-    output: true
 
 #include:
 #  - music/_posts

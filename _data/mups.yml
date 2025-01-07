@@ -1,0 +1,29 @@
+- name: UnLimit
+  accounts:
+    - acc: bdrbt*01012025
+      characters:
+        - badrobot
+        - Oreo
+        - skerj
+        - Shopee
+        - Mage
+    - acc: uns**
+      characters:
+        - OhMG
+        - Blue
+    - acc: a47**
+      characters:
+        - Guard
+        - YHWACH
+        - Manager
+
+#- name: infinity
+#  accounts:
+#    - acc: codelord
+#      characters:
+#        - CodeWizard
+#        - InfiniteX
+#    - acc: coder2
+#      characters:
+#        - DevMaster
+#        - CodeKing

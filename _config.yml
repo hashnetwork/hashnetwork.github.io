@@ -1,6 +1,6 @@
 # Site settings
-title: "Hash Network"
-description: "Welcome to the Hash Network GitHub Pages site!"
+title: "hashNetwork"
+#description: "Welcome to the Hash Network GitHub Pages site!"
 baseurl: ""  # Set to empty if your repo is directly hosted under your username (e.g., username.github.io)
 url: "https://hashnetwork.github.io"  # Replace with your actual GitHub Pages URL
 
@@ -9,7 +9,7 @@ url: "https://hashnetwork.github.io"  # Replace with your actual GitHub Pages UR
 
 # Build settings
 paginate: 5
-paginate_path: "/blog/page:num/"
+paginate_path: "/page:num/"
 
 
 defaults:

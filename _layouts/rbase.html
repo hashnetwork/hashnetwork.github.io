@@ -1,0 +1,21 @@
+<!doctype html>
+<html data-theme="light" lang="{{ page.lang | default: site.lang | default: " en" }}">
+<head>
+  {%- include head.html -%}
+  {%- include custom-head.html -%}
+  
+</head>
+<body>
+  <!-- Wrapper to handle the layout with flexbox -->
+  <div class="wrapper">
+  {%- include header.html -%}
+  <main class="container flex">
+    <article>
+      {{content}}
+    </article>
+  </main>
+  {%- include footer.html -%}
+  </div>
+  {%- include base-js.html -%}
+</body>
+</html>
